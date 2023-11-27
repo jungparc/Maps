@@ -1,7 +1,5 @@
-## Application Service > Maps > Overview
+## 개요페이지입니다.
 
-The Maps Service provides navigation services through iNavi with accumulated expertise via maps (web or mobile) and HTTP REST APIs. 
-A variety of features are available, including easy and precise maps, search, and getting directions. 
 
 ## Main Features
 
