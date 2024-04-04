@@ -1,5 +1,12 @@
 ## Application Service > Maps > Release Notes
 
+### April 6, 2024
+#### Added Features
+* [API] Added paramters to the integrated search API
+    * addrext: Broad match option for parcel/building numbers
+* [API] Added paramters to APIs for search
+    * usageType: Car usage
+
 ### October 26, 2023
 #### Added Features
 * [API] Added Search for W3W Suggestions API

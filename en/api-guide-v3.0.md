@@ -51,7 +51,7 @@ This guide describes how to use features such as search, geocoding, reverse geoc
 
 | Method | URI                                                          |
 | ------ | ------------------------------------------------------------ |
-| GET    | /maps/v3.0/appkeys/{appkey}/searches?query={query}&coordtype={coordtype}&startposition={startposition}&reqcount={reqcount}&spopt={spopt}&radius={radius}&admcode={admcode}&depth={depth}&x1={x1}&y1={y1}&x2={x2}&y2={y2}&sortopt={sortopt}&catecode={catecode} |
+| GET    | /maps/v3.0/appkeys/{appkey}/searches?query={query}&coordtype={coordtype}&startposition={startposition}&reqcount={reqcount}&spopt={spopt}&radius={radius}&admcode={admcode}&depth={depth}&x1={x1}&y1={y1}&x2={x2}&y2={y2}&sortopt={sortopt}&catecode={catecode}&addrext={addrext} |
 
 [Path parameter]
 
@@ -77,6 +77,7 @@ This guide describes how to use features such as search, geocoding, reverse geoc
 | y2            | String | Optional |             | Y2 coordinates<br>Y coordinate on bottom right of Extent, if spopt is 1; disabled if spopt is 2 |
 | sortopt       | String | Optional |             | Sorting option<br>1: Sort by name<br>2: Sort by distance (If coordinates are set)<br>3: Name match (Additionally sort by distance if coordinates are set)<br>4: Sort by search word weight (based on the engine)* Set to 4 if sortopt value is not set |
 | catecode      | String | Optional      |           | Preferred category<br>If a category name is entered in the search word when searching for a preferred category, the priority of search is on the search word rather than the entered preferred category according to the search word priority policy<br>For example, Search word: "beauty salon" , Preferred category: "100000 "(restaurant) -> search is performed based on beauty salon |
+| addrext       | String | Optional      |           | Broad match option for parcel/building numbers<br>0: Exact match<br>1:  Sub parcel number match<br>2: Main parcel number match<br>* Defaults to 0 if no options are selected |
 
 #### Response
 
@@ -1936,7 +1937,7 @@ This guide describes how to use features such as search, geocoding, reverse geoc
 
 | Method | URI                                                          |
 | ------ | ------------------------------------------------------------ |
-| GET  | /maps/v3.0/appkeys/{appkey}/route-time?startX={startX}&startY={startY}&endX={endX}&endY={endY}&type={type}&year={year}&month={month}&day={day}&hour={hour}&minutes={minutes}&via1X={via1X}&via1Y={via1Y}&via2X={via2X}&via2Y={via2Y}&via3X={via3X}&via3Y={via3Y}&via4X={via4X}&via4Y={via4Y}&via5X={via5X}&via5Y={via5Y}&coordType={coordType}&carType={carType}&useTrafficColor={useTrafficColor}&guideTop={guideTop}&groupByTrafficColor={groupByTrafficColor}&beforeCount={beforeCount}&afterCount={afterCount}&interval={interval}&useTaxifare={useTaxifare}&carHeight={carHeight}&carWeight={carWeight}&useStartDirection={useStartDirection}|
+| GET  | /maps/v3.0/appkeys/{appkey}/route-time?startX={startX}&startY={startY}&endX={endX}&endY={endY}&type={type}&year={year}&month={month}&day={day}&hour={hour}&minutes={minutes}&via1X={via1X}&via1Y={via1Y}&via2X={via2X}&via2Y={via2Y}&via3X={via3X}&via3Y={via3Y}&via4X={via4X}&via4Y={via4Y}&via5X={via5X}&via5Y={via5Y}&coordType={coordType}&carType={carType}&useTrafficColor={useTrafficColor}&guideTop={guideTop}&groupByTrafficColor={groupByTrafficColor}&beforeCount={beforeCount}&afterCount={afterCount}&interval={interval}&useTaxifare={useTaxifare}&carHeight={carHeight}&carWeight={carWeight}&useStartDirection={useStartDirection}&usageType={usageType}|
 
 [Path parameter]
 
@@ -1980,6 +1981,7 @@ This guide describes how to use features such as search, geocoding, reverse geoc
 | carHeight   | Integer | Optional   |       | Car height information<br>Default: 0 |
 | carWeight   | Integer | Optional   |       | Car weight information<br>Default: 0 |
 | useStartDirection   | Boolean | Optional   |       | Whether to specify navigation direction based on departure coordinates<br>Default: false |
+| usageType   | Integer | Optional   |       | Car usage<br>Default: 0<br>General: 0<br>Taxi: 1 |
 
 #### Response
 
